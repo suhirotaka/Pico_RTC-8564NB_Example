@@ -8,6 +8,7 @@
 //! - Changed into_pull_up_input() to into_floating_input()
 //! - Add following_read variable
 //! - Changed the condition to call self.setup
+//! - Changed `a.bind(&mut &mut handle_nack);` to `a.bind(&mut handle_nack);`
 //!
 
 #![no_std]
@@ -156,7 +157,7 @@ where
         let mut wrap_source = a.label();
         let mut do_exec = a.label();
 
-        a.bind(&mut &mut handle_nack);
+        a.bind(&mut handle_nack);
         // continue if NAK was expected
         a.jmp(pio::JmpCondition::YDecNonZero, &mut wrap_target);
         // Otherwise stop, ask for help (raises the irq line (0+SM::id())%4)

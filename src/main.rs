@@ -157,6 +157,7 @@ fn main() -> ! {
 }
 
 // Parse response from RTC-8564NB and print it
+#[allow(clippy::too_many_arguments)]
 fn print_time(
     serial: &mut impl FmtWrite,
     year: [u8; 1],
@@ -186,7 +187,7 @@ fn bcd_to_decimal(bcd: u8) -> u8 {
 
 // Convert decimal value to BCD
 fn decimal_to_bcd(decimal: u8) -> u8 {
-    (decimal / 10 << 4) + decimal % 10
+    ((decimal / 10) << 4) + decimal % 10
 }
 
 // End of file
