@@ -11,10 +11,8 @@
 use core::fmt::Write as FmtWrite;
 use embedded_hal::blocking::i2c::{Operation, Transactional};
 use embedded_time::rate::*;
-use rp_pico::{entry, hal, hal::pac, hal::prelude::*};
-
-#[cfg(debug_assertions)]
 use panic_halt as _;
+use rp_pico::{entry, hal, hal::pac, hal::prelude::*};
 
 /// Pico calls this function after startup
 #[entry]
