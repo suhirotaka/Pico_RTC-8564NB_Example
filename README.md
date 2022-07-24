@@ -2,11 +2,10 @@
 
 This makes Raspberry Pi Pico
 
-- to read time from [RTC-8564NB I2C real time clock module](https://www5.epsondevice.com/en/products/rtc/rtc8564nb.html)
-- to output time through UART
-- to enable RTC-8564NB's alarm output
+- reading time from [RTC-8564NB I2C real time clock module](https://www5.epsondevice.com/en/products/rtc/rtc8564nb.html)
+- printing time through UART
 
-### How to Run
+### Usage
 
 For a debug build
 
@@ -19,3 +18,7 @@ For a release build
 ```sh
 cargo run --release
 ```
+
+### Circuit Diagram
+
+![pico_i2c_uart_ブレッドボード](https://user-images.githubusercontent.com/618577/180661044-1de50956-70c6-4aba-acfa-bcf3c7cb9672.png)
